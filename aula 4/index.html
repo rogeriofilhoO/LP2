@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Atributos</title>
+    <style>
+        #emoji {
+            width: 200px;
+            height: 200px;
+        }
+
+        .e1 {
+            background-image: url(imgs/e1.png);
+        }
+
+        .e2 {
+            background-image: url(imgs/e2.png);
+        }
+
+        .e3 {
+            background-image: url(imgs/e3.png);
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="trocarEmoji(1)">Emoji 1</button>
+    <button onclick="trocarEmoji(2)">Emoji 2</button>
+    <button onclick="trocarEmoji(3)">Emoji 3</button>
+    <button onclick="removerEmoji()">Remover Emoji</button>
+    <button onclick="verificarEmoji()">Verificar</button>
+    <div id="emoji"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

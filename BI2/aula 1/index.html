@@ -15,11 +15,11 @@
     </div>
     <div>
         <ul>
-            <li>Maria</li>
-            <li>Maria</li>
-            <li>Marcos</li>
-            <li>Aline</li>
-            <li>Adriana</li>
+            <li id="u1">Maria</li>
+            <li id="u2">Maria</li>
+            <li id="u3">Marcos</li>
+            <li id="u4">Aline</li>
+            <li id="u5">Adriana</li>
         </ul>
     </div>
     <div>
@@ -27,7 +27,44 @@
     </div>
 
     <script>
-       // $('h1').fadeOut("2000") // Sair da tela por 2 segundos 
+        $('#btn').on("click", botao)
+        var n = 0;
+        function botao() {
+            switch (n) {
+                case 0:
+                    $("#u1").css({ 'color': 'blue' })
+                    break;
+                case 1:
+                    $("#u2").css({ 'color': 'aquamarine' })
+                    break;
+                case 2:
+                    $("#u3").css({ 'color': 'yellow' })
+                    break;
+                case 3:
+                    $("#u4").css({ 'color': 'maroon' })
+                    break;
+                case 4:
+                    $("#u5").css({ 'color': 'grey' })
+                    break;
+            }
+            n++;
+        }
+
+
+
+
+        // $('h1').fadeOut("2000").fadeIn("2000"); // Sair da tela por 2 segundos 
+        // $("li").remove();  //remove
+        // $("h1").append(" de pessoas") //inseri informação
+
+        // $("#btn").on("click",botao) // ao clicar sumira a lista de nomes
+        // function botao(){
+        //     $('h1').remove();
+        // }
+        //$("#btn").on("click", botao); //mudar cor
+        //function botao() {
+        //    $("li").css({'color' : 'aquamarine'});
+        //}
     </script>
 
 

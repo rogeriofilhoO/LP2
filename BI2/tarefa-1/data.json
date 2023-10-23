@@ -1,9 +1,34 @@
-{"filmes" : [
-    {
-        "nome":"Hereditário"
-    },
-    {
-        "nome":"Midsommar"
-    } 
-]
+{
+    "filmes": [
+        {
+            "nome": "Hereditário"
+        },
+        {
+            "nome": "Midsommar"
+        },
+        {
+            "nome": "It a Coisa"
+        }
+    ],
+
+    "people": [
+        {
+            "nome": "Neil",
+            "idade": "16",
+            "cpf": "09812734906"
+        },
+        {
+            "nome": "Wilbur",
+            "idade": "24",
+            "cpf": "08976324123"
+        }
+    ],
+
+    "text": [
+        {
+            "header": "The last of Us",
+            "text":"Depois de tudo o que passamos juntos. De tudo o que eu fiz. Não pode ser em vão.",
+            "bottom": "Ellie"
+        }
+    ]
 }

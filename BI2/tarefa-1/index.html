@@ -10,6 +10,7 @@
     <style>
         #master {
             display: flex;
+            font-family:Helvetica, sans-serif;
         }
 
         section {
@@ -23,6 +24,11 @@
             border: solid 1.5px black;
             background-color: aquamarine;
             transition: 1s;
+            
+        }
+        #btn:hover {
+            text-decoration:underline;
+            cursor: pointer;
         }
 
         #square {
@@ -33,13 +39,23 @@
             transition: 1.5s;
         }
 
+        #square:hover {
+            cursor: pointer;
+        }
+
         #obj {
             width: 150px;
             height: 100px;
-            background-color: darkblue;
+            background-color: #00008b;
             border: solid 1px black;
             position: relative;
-            transition: 2s;
+            transition: 1s;
+        }
+
+        #obj:hover {
+            border-radius: 20px;
+            background-color: #4141bc;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -67,6 +83,14 @@
             <div>
                 <p><strong>1-</strong> Lista de Filmes de terror</p>
                 <div id="filmes"></div>
+            </div>
+            <div>
+                <p><strong>2-</strong> Lista de Pessoas e alguns dados</p>
+                <div id="peo"></div>
+            </div>
+            <div>
+                <p><strong>3-</strong> Frase de <strong>The Last of Us</strong></p>
+                <div id="tlou"></div>
             </div>
         </section>
     </div>
@@ -111,11 +135,11 @@
             function move() {
                 switch (n) {
                     case 0:
-                        $("#obj").css({ 'left': '200px' })
+                        $("#obj").css({ 'transform': 'translate(0, 200px)' })
                         n++;
                         break;
                     case 1:
-                        $("#obj").css({ 'left': '0px' })
+                        $("#obj").css({ 'transform': 'translate(0,0)' })
                         n--;
                         break;
                 }
@@ -124,11 +148,33 @@
 
         //JSON
         { //1
-            let divFilmes = $("#filmes")
+            let divFilmes = document.querySelector("#filmes")
             fetch("data.json").then((response) => {
                 response.json().then((data) => {
-                    data.filmes.map((filme) => {
-                        divFilmes.innerHTML += `<li>${filme.nome}</li>`
+                    data.filmes.map((obj) => {
+                        divFilmes.innerHTML += `<li>${obj.nome}</li>`
+                    })
+                })
+            })
+        }
+        { //2
+            let divPeople = document.querySelector("#peo")
+            fetch("data.json").then((response) => {
+                response.json().then((data) => {
+                    data.people.map((obj) => {
+                        divPeople.innerHTML += `<li>Nome: ${obj.nome} - Idade: ${obj.idade}
+                                                CPF: ${obj.cpf}</li>`
+                    })
+                })
+            })
+        }
+        { //3
+            let divTlou = document.querySelector("#tlou")
+            fetch("data.json").then((response) => {
+                response.json().then((data) => {
+                    data.text.map((obj) => {
+                        divTlou.innerHTML += `<h4>${obj.header}</h4>
+                        <p>${obj.text}</p> <h5>- ${obj.bottom}</h5>`
                     })
                 })
             })

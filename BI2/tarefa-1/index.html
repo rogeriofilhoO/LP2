@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        #btn {
+            width: 50px;
+            height: 30px;
+            border-style: none;
+            border: solid 1.5px black;
+            background-color: aquamarine;
+            transition: 1s;
+        }
+
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            border: solid 1px black;
+            transition: 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>3 exemplos com Jquery</h3>
+    <div>
+        <p><strong>1-</strong>Botão aumento e diminui</p>
+        <button id="btn">Click</button>
+    </div>
+    <div>
+        <p><strong>2-</strong> Quadrado = Circulo</p>
+        <div id="square"></div>
+    </div>
+    <div>
+        <p><strong>3-</strong></p>
+    </div>
+    <script>
+        //JQUERY
+        { //1
+            $("#btn").on('click', botao);
+            let n = 0;
+            function botao() {
+                switch (n) {
+                    case 0:
+                        $("#btn").css({ 'height': '40px', 'width': '60px' })
+                        n++;
+                        break;
+                    case 1:
+                        $("#btn").css({ 'height': '30px', 'width': '50px' })
+                        n--;
+                        break;
+                }
+            }
+        }
+        { //2
+           
+            $("#square").on('click', circle);
+            let n = 0;
+            function circle() {
+                switch (n) {
+                    case 0:
+                        $("#square").css({ 'border-radius': '50px', 'background-color': 'blue' })
+                        n++;
+                        break;
+                    case 1:
+                        $("#square").css({ 'border-radius': '0px', 'background-color': 'grey' })
+                        n--;
+                        break;
+                }
+            }
+        }
+        { //3
+
+        }
+    </script>
+</body>
+
+</html>

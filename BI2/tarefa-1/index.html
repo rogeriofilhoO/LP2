@@ -24,7 +24,9 @@
             border: solid 1px black;
             transition: 1.5s;
         }
+
         #obj {
+
             width: 150px;
             height: 100px;
             background-color: darkblue;
@@ -36,18 +38,26 @@
 </head>
 
 <body>
-    <h3>3 exemplos com Jquery</h3>
     <div>
-        <p><strong>1-</strong> Botão aumento e diminui</p>
-        <button id="btn">Click</button>
+        <h3>3 exemplos com JQUERY</h3>
+        <div>
+            <p><strong>1-</strong> Botão aumento e diminui</p>
+            <button id="btn">Click</button>
+        </div>
+        <div>
+            <p><strong>2-</strong> Quadrado = Circulo</p>
+            <div id="square"></div>
+        </div>
+        <div>
+            <p><strong>3-</strong> Movimentando um objeto</p>
+            <div id="obj"></div>
+        </div>
     </div>
     <div>
-        <p><strong>2-</strong> Quadrado = Circulo</p>
-        <div id="square"></div>
-    </div>
-    <div>
-        <p><strong>3-</strong> Movimentando um objeto</p>
-        <div id="obj"></div>
+        <h3>3 exemplos com JSON</h3>
+        <div>
+            <p><strong>1-</strong></p>
+        </div>
     </div>
     <script>
         //JQUERY
@@ -68,7 +78,7 @@
             }
         }
         { //2
-           
+
             $("#square").on('click', circle);
             let n = 0;
             function circle() {
@@ -87,14 +97,14 @@
         { //3
             $("#obj").on('click', move)
             let n = 0;
-            function move(){
-                switch(n){
+            function move() {
+                switch (n) {
                     case 0:
-                        $("#obj").css({'left' : '200px'})
+                        $("#obj").css({ 'left': '200px' })
                         n++;
                         break;
                     case 1:
-                        $("#obj").css({'left' : '10px'})
+                        $("#obj").css({ 'left': '10px' })
                         n--;
                         break;
                 }

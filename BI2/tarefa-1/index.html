@@ -8,6 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <style>
+        #master {
+            display: flex;
+        }
+
+        section {
+            margin: 20px;
+        }
+
         #btn {
             width: 50px;
             height: 30px;
@@ -26,38 +34,41 @@
         }
 
         #obj {
-
             width: 150px;
             height: 100px;
             background-color: darkblue;
             border: solid 1px black;
-            position: absolute;
+            position: relative;
             transition: 2s;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h3>3 exemplos com JQUERY</h3>
-        <div>
-            <p><strong>1-</strong> Botão aumento e diminui</p>
-            <button id="btn">Click</button>
-        </div>
-        <div>
-            <p><strong>2-</strong> Quadrado = Circulo</p>
-            <div id="square"></div>
-        </div>
-        <div>
-            <p><strong>3-</strong> Movimentando um objeto</p>
-            <div id="obj"></div>
-        </div>
-    </div>
-    <div>
-        <h3>3 exemplos com JSON</h3>
-        <div>
-            <p><strong>1-</strong></p>
-        </div>
+    <div id="master">
+        <section>
+            <h3>3 exemplos com JQUERY</h3>
+            <div>
+                <p><strong>1-</strong> Botão aumento e diminui</p>
+                <button id="btn">Click</button>
+            </div>
+            <div>
+                <p><strong>2-</strong> Quadrado = Circulo</p>
+                <div id="square"></div>
+            </div>
+            <div>
+                <p><strong>3-</strong> Movimentando um objeto</p>
+                <div id="obj"></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>3 exemplos com JSON</h3>
+            <div>
+                <p><strong>1-</strong> Lista de Filmes de terror</p>
+                <div id="filmes"></div>
+            </div>
+        </section>
     </div>
     <script>
         //JQUERY
@@ -104,11 +115,23 @@
                         n++;
                         break;
                     case 1:
-                        $("#obj").css({ 'left': '10px' })
+                        $("#obj").css({ 'left': '0px' })
                         n--;
                         break;
                 }
             }
+        }
+
+        //JSON
+        { //1
+            let divFilmes = $("#filmes")
+            fetch("data.json").then((response) => {
+                response.json().then((data) => {
+                    data.filmes.map((filme) => {
+                        divFilmes.innerHTML += `<li>${filme.nome}</li>`
+                    })
+                })
+            })
         }
     </script>
 </body>
